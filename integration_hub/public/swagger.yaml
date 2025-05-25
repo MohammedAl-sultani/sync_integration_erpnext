@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: Integration Hub API
+  version: 1.0.0
+paths:
+  /method/integration_hub.integration_hub.doctype.integration_store.integration_store.run_sync_now:
+    post:
+      summary: مزامنة كاملة
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              example:
+                doc:
+                  name: "STORE-0001"
+      responses:
+        '200':
+          description: تم التنفيذ
+          content:
+            application/json:
+              schema:
+                example:
+                  message: "تم تنفيذ المزامنة بنجاح"
+

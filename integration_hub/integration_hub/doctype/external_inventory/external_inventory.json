@@ -1,0 +1,52 @@
+{
+ "doctype": "DocType",
+ "name": "External Inventory",
+ "module": "Integration Hub",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "store",
+   "fieldtype": "Link",
+   "label": "Store",
+   "options": "Integration Store",
+   "reqd": 1
+  },
+  {
+   "fieldname": "external_sku",
+   "fieldtype": "Data",
+   "label": "External SKU",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "payload",
+   "fieldtype": "Code",
+   "label": "Raw Payload",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "synced_to_erp",
+   "fieldtype": "Check",
+   "label": "Synced to ERPNext"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ]
+}

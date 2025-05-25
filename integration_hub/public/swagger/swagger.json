@@ -1,0 +1,304 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "🔗 Integration Hub API",
+    "version": "1.0.0",
+    "description": "توثيق كامل لواجهات الربط بين ERPNext والمتاجر الخارجية (OpenCart، WooCommerce، Shopify...)\n\nتشمل مزامنة البيانات في الاتجاهين:\n- ✅ من المتجر إلى ERPNext\n- 🔁 من ERPNext إلى المتجر\n\nتشمل المنتجات، العملاء، الطلبات، والمخزون."
+  },
+  "servers": [
+    {
+      "url": "/api"
+    }
+  ],
+  "paths": {
+    "/method/integration_hub.api.sync_products": {
+      "post": {
+        "summary": "🔄 مزامنة المنتجات (من المتجر)",
+        "description": "جلب المنتجات من المتجر إلى ERPNext وتخزينها في External Product.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "store_name": "STORE-0001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "تم جلب المنتجات بنجاح",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "✅ تم جلب المنتجات بنجاح."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/method/integration_hub.api.send_products": {
+      "post": {
+        "summary": "📤 إرسال المنتجات (إلى المتجر)",
+        "description": "إرسال المنتجات من ERPNext إلى المتجر الخارجي.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "store_name": "STORE-0001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "تم إرسال المنتجات",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "📦 تم إرسال المنتجات إلى المتجر بنجاح."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/method/integration_hub.api.sync_customers": {
+      "post": {
+        "summary": "👥 مزامنة العملاء (من المتجر)",
+        "description": "جلب العملاء من المتجر وتخزينهم في External Customer.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "store_name": "STORE-0001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "تم جلب العملاء",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "✅ تم جلب العملاء بنجاح."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/method/integration_hub.api.send_customers": {
+      "post": {
+        "summary": "📤 إرسال العملاء (إلى المتجر)",
+        "description": "إرسال بيانات العملاء من ERPNext إلى المتجر الخارجي.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "store_name": "STORE-0001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "تم إرسال العملاء",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "👥 تم إرسال العملاء إلى المتجر بنجاح."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/method/integration_hub.api.sync_orders": {
+      "post": {
+        "summary": "🧾 مزامنة الطلبات (من المتجر)",
+        "description": "جلب الطلبات من المتجر وتخزينها في External Order.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "store_name": "STORE-0001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "تم جلب الطلبات",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "✅ تم جلب الطلبات بنجاح."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/method/integration_hub.api.send_orders": {
+      "post": {
+        "summary": "📤 إرسال الطلبات (إلى المتجر)",
+        "description": "إرسال الطلبات من ERPNext إلى المتجر الخارجي.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "store_name": "STORE-0001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "تم إرسال الطلبات",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "📤 تم إرسال الطلبات إلى المتجر بنجاح."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/method/integration_hub.api.get_inventory": {
+      "get": {
+        "summary": "📦 جلب بيانات المخزون (مع تصفية وترقيم)",
+        "description": "جلب المنتجات المخزنة مع دعم التصفية بـ sku و name و warehouse_id مع ترقيم النتائج (limit, offset).",
+        "parameters": [
+          { "name": "store_name", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "sku", "in": "query", "required": false, "schema": { "type": "string" } },
+          { "name": "name", "in": "query", "required": false, "schema": { "type": "string" } },
+          { "name": "warehouse_id", "in": "query", "required": false, "schema": { "type": "string" } },
+          { "name": "limit", "in": "query", "required": false, "schema": { "type": "integer", "default": 20 } },
+          { "name": "offset", "in": "query", "required": false, "schema": { "type": "integer", "default": 0 } }
+        ],
+        "responses": {
+          "200": {
+            "description": "تم جلب البيانات",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sku": { "type": "string" },
+                      "name": { "type": "string" },
+                      "warehouse_id": { "type": "string" },
+                      "quantity": { "type": "number" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/method/integration_hub.api.get_inventory/total": {
+      "get": {
+        "summary": "🔢 عدد منتجات المخزون (Total)",
+        "description": "إرجاع العدد الإجمالي للمنتجات المتوافقة مع الفلاتر المحددة.",
+        "parameters": [
+          { "name": "store_name", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "sku", "in": "query", "required": false, "schema": { "type": "string" } },
+          { "name": "name", "in": "query", "required": false, "schema": { "type": "string" } },
+          { "name": "warehouse_id", "in": "query", "required": false, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "عدد السجلات",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "total": { "type": "integer" }
+                  },
+                  "example": {
+                    "total": 347
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/method/integration_hub.api.get_store_settings": {
+      "get": {
+        "summary": "⚙️ إعدادات المتجر",
+        "description": "عرض إعدادات متجر محدد حسب الاسم",
+        "parameters": [
+          {
+            "name": "store_name",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "تم جلب الإعدادات",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "store_name": "My OpenCart Store",
+                    "base_url": "https://example.com",
+                    "system_type": "OpenCart",
+                    "direction": "Both",
+                    "enabled": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

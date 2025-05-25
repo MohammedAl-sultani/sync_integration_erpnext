@@ -1,0 +1,51 @@
+{
+ "doctype": "DocType",
+ "name": "External Product",
+ "module": "Integration Hub",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "store",
+   "fieldtype": "Link",
+   "label": "Store",
+   "options": "Integration Store",
+   "reqd": 1
+  },
+  {
+   "fieldname": "external_id",
+   "fieldtype": "Data",
+   "label": "External ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "label": "Product Name"
+  },
+  {
+   "fieldname": "sku",
+   "fieldtype": "Data",
+   "label": "SKU"
+  },
+  {
+   "fieldname": "payload",
+   "fieldtype": "Code",
+   "label": "Raw Payload",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "synced_to_erp",
+   "fieldtype": "Check",
+   "label": "Synced to ERPNext"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ]
+}

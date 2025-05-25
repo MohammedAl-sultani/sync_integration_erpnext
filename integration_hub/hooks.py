@@ -242,3 +242,9 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {"doctype": "DocType", "filters": [["module", "=", "Integration Hub"]]}
+]
+doctype_js = {
+    "Integration Store": "public/js/integration_store.js"
+}
